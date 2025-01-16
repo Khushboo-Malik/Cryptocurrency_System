@@ -6,6 +6,9 @@ const { connectMongoDb } = require("./connection");
 const {createAlert}=require("./src/controllers/alertController");
 
 
+connectMongoDb(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB Connected!"));
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
